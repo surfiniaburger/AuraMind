@@ -1,61 +1,53 @@
-# Google AI Edge Gallery ✨
+# Aura-Mind: An AI Field Guide for the Nigerian Farmer ✨
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/google-ai-edge/gallery)](https://github.com/google-ai-edge/gallery/releases)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/surfiniaburger/AuraMind)](https://github.com/surfiniaburger/AuraMind/releases)
 
-**Explore, Experience, and Evaluate the Future of On-Device Generative AI with Google AI Edge.**
+An offline-first, on-device AI that empowers Nigerian farmers to diagnose maize diseases using just their phone's camera. This project is a submission for the **Google - The Gemma 3n Impact Challenge**.
 
-The Google AI Edge Gallery is an experimental app that puts the power of cutting-edge Generative AI models directly into your hands, running entirely on your Android *(available now)* and iOS *(coming soon)* devices. Dive into a world of creative and practical AI use cases, all running locally, without needing an internet connection once the model is loaded. Experiment with different models, chat, ask questions with images, explore prompts, and more!
+**Explore Aura-Mind:**
+*   **[Kaggle Writeup (Main Story)](https://www.kaggle.com/writeups/surfiniaburger/aura-mind-an-ai-field-guide-for-the-nigerian-farme)**  *(<-- Link to your final Kaggle Writeup here)*
+*   **[Technical Deep Dive & Training Notebooks](https://github.com/surfiniaburger/tune/blob/main/docs)** *(<-- This links to your articles folder)*
+*   **[Latest APK Release](https://github.com/surfiniaburger/AuraMind/releases/latest)** *(<-- This links to your v0.1.0-alpha release)*
 
-**Overview**
-<img width="1532" alt="Overview" src="https://github.com/user-attachments/assets/4f2702d7-91a0-4eb3-aa76-58bc8e7089c6" />
+---
 
-**Ask Image**
-<img width="1532" alt="Ask Image" src="https://github.com/user-attachments/assets/e2b5b41b-fed0-4a7c-9547-2abb1c10962c" />
+## The Problem: A Local Challenge with Global Implications
 
-**Prompt Lab**
-<img width="1532" alt="Prompt Lab" src="https://github.com/user-attachments/assets/22e459d0-0365-4a92-8570-fb59d4d1e320" />
+Agriculture is the backbone of Nigeria's economy, employing over 70% of the population. Yet, farmers face an estimated 30-40% in annual crop losses due to pests and diseases. For a smallholder farmer, this is the difference between prosperity and poverty. The knowledge to fight back exists, but it's inaccessible, especially in rural areas with no reliable internet.
 
-**AI Chat**
-<img width="1532" alt="AI Chat" src="https://github.com/user-attachments/assets/edaa4f89-237a-4b84-b647-b3c4631f09dc" />
+Aura-Mind was born to bridge this gap.
 
-## ✨ Core Features
+## Our Solution: An AI That Lives on the Edge
 
-*   **📱 Run Locally, Fully Offline:** Experience the magic of GenAI without an internet connection. All processing happens directly on your device.
-*   **🤖 Choose Your Model:** Easily switch between different models from Hugging Face and compare their performance.
-*   **🖼️ Ask Image:** Upload an image and ask questions about it. Get descriptions, solve problems, or identify objects.
-*   **✍️ Prompt Lab:** Summarize, rewrite, generate code, or use freeform prompts to explore single-turn LLM use cases.
-*   **💬 AI Chat:** Engage in multi-turn conversations.
-*   **📊 Performance Insights:** Real-time benchmarks (TTFT, decode speed, latency).
-*   **🧩 Bring Your Own Model:** Test your local LiteRT `.task` models.
-*   **🔗 Developer Resources:** Quick links to model cards and source code.
+Aura-Mind is an AI-powered companion that runs **entirely offline** on a basic Android phone. A farmer can take a picture of a struggling maize plant, and the AI provides a probable diagnosis and simple, actionable advice.
 
-## 🏁 Get Started in Minutes!
+This project fine-tunes Google's powerful **Gemma 3n** model on a custom dataset of local maize conditions, creating a specialized "Maize Expert" that is private, personal, and powerful enough to run in the palm of a farmer's hand.
 
-1.  **Download the App:** Grab the [**latest APK**](https://github.com/google-ai-edge/gallery/releases/latest/download/ai-edge-gallery.apk).
-2.  **Install & Explore:** For detailed installation instructions (including for corporate devices) and a full user guide, head over to our [**Project Wiki**](https://github.com/google-ai-edge/gallery/wiki)!
+| Run Name          | Learning Rate | LoRA Rank (r) | Epochs | Final `train/loss` | **Validation Accuracy** |
+| :---------------- | :------------ | :------------ | :----- | :----------------- | :-------------------- |
+| **comic-sweep-1** | **8.34e-06**  | **16**        | **15** | **0.0003**         | **100%**              |
+| **stilted-sweep-2** | 1.57e-05      | 32            | 20     | 0.0001             | **100%**              |
+| **unique-sweep-3**| 1.16e-05      | 32            | 20     | 0.0001             | **100%**              |
+| **vague-sweep-4**   | 1.07e-04      | 32            | 20     | 0.0001             | **100%**              |
+| **amber-sweep-5**   | 4.45e-04      | 32            | 20     | 0.0001             | **100%**              |
 
-## 🛠️ Technology Highlights
+## Technical Journey: From Debugging Hell to 100% Accuracy
 
-*   **Google AI Edge:** Core APIs and tools for on-device ML.
-*   **LiteRT:** Lightweight runtime for optimized model execution.
-*   **LLM Inference API:** Powering on-device Large Language Models.
-*   **Hugging Face Integration:** For model discovery and download.
+The path to a working model was a trial by fire, battling everything from hardware errors on cloud GPUs to subtle bugs in cutting-edge libraries. Our journey involved:
+1.  **Building a Real-World Dataset:** Gathering images from local Lagos markets to ensure our model trained on realistic, not academic, data.
+2.  **Establishing a Stable Pipeline:** Through rigorous experimentation, we proved a single-GPU training strategy was superior for model quality.
+3.  **Achieving Perfection:** We launched an automated Weights & Biases sweep that successfully identified multiple hyperparameter configurations that achieved **100% validation accuracy**.
+4.  **The Final Frontier:** The current challenge is the final conversion of our proven, high-performance model into the `.task` format required for on-device deployment.
 
-## 🤝 Feedback
+For a full, detailed narrative of our technical journey and a deep dive into our training and evaluation methodology, please see our **[accompanying articles](https://github.com/surfiniaburger/tune/blob/main/docs)**.
 
-This is an **experimental Alpha release**, and your input is crucial!
+## The Application
 
-*   🐞 **Found a bug?** [Report it here!](https://github.com/google-ai-edge/gallery/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D)
-*   💡 **Have an idea?** [Suggest a feature!](https://github.com/google-ai-edge/gallery/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEATURE%5D)
+This repository is a fork of the official **Google AI Edge Gallery**, which serves as the production-ready foundation for the Aura-Mind app. We have configured a GitHub Actions CI/CD pipeline that automatically builds and releases a new APK on every commit.
 
-## 📄 License
+The current `v0.1.0-alpha` release contains the base application. The final step is to integrate our custom-trained `.task` file, which is pending the resolution of the conversion issues detailed in our writeup.
 
-Licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
+---
 
-## 🔗 Useful Links
 
-*   [**Project Wiki (Detailed Guides)**](https://github.com/google-ai-edge/gallery/wiki)
-*   [Hugging Face LiteRT Community](https://huggingface.co/litert-community)
-*   [LLM Inference guide for Android](https://ai.google.dev/edge/mediapipe/solutions/genai/llm_inference/android)
-*   [Google AI Edge Documentation](https://ai.google.dev/edge)

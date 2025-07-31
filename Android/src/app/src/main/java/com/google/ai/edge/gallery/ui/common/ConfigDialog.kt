@@ -333,22 +333,22 @@ fun SegmentedButtonRow(config: SegmentedButtonConfig, values: SnapshotStateMap<S
         SegmentedButton(
           shape = SegmentedButtonDefaults.itemShape(index = index, count = config.options.size),
           onCheckedChange = {
-            var newSelectionStates = selectionStates.toMutableList()
-            val selectedCount = newSelectionStates.count { it }
+            val newSelectionStates = selectionStates.toMutableList()
 
             // Single select.
             if (!config.allowMultiple) {
-              if (!newSelectionStates[index]) {
-                newSelectionStates = MutableList(config.options.size) { it == index }
-              }
+              // Simply set the new state, as only one can be active.
+              selectionStates = List(config.options.size) { it == index }
             }
             // Multiple select.
             else {
+              val selectedCount = newSelectionStates.count { it }
+              // Prevent un-selecting the last item.
               if (!(selectedCount == 1 && newSelectionStates[index])) {
                 newSelectionStates[index] = !newSelectionStates[index]
               }
+              selectionStates = newSelectionStates
             }
-            selectionStates = newSelectionStates
 
             values[config.key.label] =
               config.options
