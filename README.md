@@ -6,10 +6,9 @@
 An offline-first, on-device AI that empowers Nigerian farmers to diagnose maize diseases using just their phone's camera. This project is a submission for the **Google - The Gemma 3n Impact Challenge**.
 
 **Explore Aura-Mind:**
-*   **[Kaggle Writeup (Main Story)](https://www.kaggle.com/writeups/surfiniaburger/aura-mind-an-ai-field-guide-for-the-nigerian-farme)**  *(<-- Link to your final Kaggle Writeup here)*
-*   **[Technical Deep Dive & Training Notebooks](https://github.com/surfiniaburger/tune/blob/main/docs)** *(<-- This links to your articles folder)*
-*   **[Latest APK Release](https://github.com/surfiniaburger/AuraMind/releases/latest)** *(<-- This links to your v0.1.0-alpha release)*
-
+*   **[Kaggle Writeup (Main Story)](https://www.kaggle.com/writeups/surfiniaburger/aura-mind-an-ai-field-guide-for-the-nigerian-farme)** 
+*   **[Technical Deep Dive & Training Notebooks](https://github.com/surfiniaburger/tune/blob/main/docs)** 
+*   **[Latest APK Release](https://github.com/surfiniaburger/AuraMind/releases/latest)** 
 ---
 
 ## The Problem: A Local Challenge with Global Implications
