@@ -3,6 +3,8 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/surfiniaburger/AuraMind)](https://github.com/surfiniaburger/AuraMind/releases)
 
+**https://huggingface.co/spaces/surfiniaburger/Aura-maize**
+
 An offline-first, on-device AI that empowers Nigerian farmers to diagnose maize diseases using just their phone's camera. This project is a submission for the **Google - The Gemma 3n Impact Challenge**.
 
 **Explore Aura-Mind:**
