@@ -25,14 +25,6 @@ Aura-Mind is an AI-powered companion that runs **entirely offline** on a basic A
 
 This project fine-tunes Google's powerful **Gemma 3n** model on a custom dataset of local maize conditions, creating a specialized "Maize Expert" that is private, personal, and powerful enough to run in the palm of a farmer's hand.
 
-| Run Name          | Learning Rate | LoRA Rank (r) | Epochs | Final `train/loss` | **Validation Accuracy** |
-| :---------------- | :------------ | :------------ | :----- | :----------------- | :-------------------- |
-| **comic-sweep-1** | **8.34e-06**  | **16**        | **15** | **0.0003**         | **100%**              |
-| **stilted-sweep-2** | 1.57e-05      | 32            | 20     | 0.0001             | **100%**              |
-| **unique-sweep-3**| 1.16e-05      | 32            | 20     | 0.0001             | **100%**              |
-| **vague-sweep-4**   | 1.07e-04      | 32            | 20     | 0.0001             | **100%**              |
-| **amber-sweep-5**   | 4.45e-04      | 32            | 20     | 0.0001             | **100%**              |
-
 ## Technical Journey: From Debugging Hell to 100% Accuracy
 
 The path to a working model was a trial by fire, battling everything from hardware errors on cloud GPUs to subtle bugs in cutting-edge libraries. Our journey involved:
