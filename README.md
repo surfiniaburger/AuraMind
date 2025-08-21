@@ -9,6 +9,7 @@ An offline-first, on-device AI that empowers Nigerian farmers to diagnose maize 
 
 **Explore Aura-Mind:**
 *   **[Kaggle Writeup (Main Story)](https://www.kaggle.com/writeups/surfiniaburger/aura-mind-an-ai-field-guide-for-the-nigerian-farme)** 
+*   **[Technical Deep Dive & Training Notebooks](https://github.com/surfiniaburger/tune/blob/main/docs)** 
 *   **[Latest APK Release](https://github.com/surfiniaburger/AuraMind/releases/latest)** 
 ---
 
